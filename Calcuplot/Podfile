@@ -1,0 +1,6 @@
+
+project '../Calcuplot.xcodeproj'
+
+target 'Calcuplot' do
+  pod 'iosMath'
+end

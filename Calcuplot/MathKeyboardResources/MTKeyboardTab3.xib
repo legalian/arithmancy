@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MTKeyboard">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="Functions Keyboard" translatesAutoresizingMaskIntoConstraints="NO" id="uVO-HA-nRD">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="180"/>
+                </imageView>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zvM-rc-mmx" userLabel="arctan">
+                    <rect key="frame" x="100" y="90" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="tan⁻¹">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="oVg-4b-mem"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="581-zD-grS" userLabel="arccos">
+                    <rect key="frame" x="100" y="45" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="cos⁻¹">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="aEZ-UG-91s"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hYQ-ZZ-MHA" userLabel="ln">
+                    <rect key="frame" x="199.5" y="0.0" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="ln">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="mxM-us-Fws"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="au8-l0-d5Z" userLabel="sec">
+                    <rect key="frame" x="50" y="45" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="sec">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="cw6-29-2rC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07b-92-INU" userLabel="csc">
+                    <rect key="frame" x="50" y="0.0" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="csc">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="p3q-qO-eri"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DdP-EL-RKA" userLabel="cot">
+                    <rect key="frame" x="50" y="90" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="cot">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="wtR-sn-9yK"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sim-EV-EtJ" userLabel="arcsec">
+                    <rect key="frame" x="150" y="45" width="49.5" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="cosh">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="epN-Zh-Y13"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AOH-24-NeZ" userLabel="arccsc">
+                    <rect key="frame" x="150" y="0.0" width="49.5" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="sinh">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="I9a-9y-iGJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9UW-zD-Z8y" userLabel="arccot">
+                    <rect key="frame" x="150" y="90" width="49.5" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="tanh">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="zWZ-E6-ehT"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UFR-kW-zBN" userLabel="sin">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="sin">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Gia-04-xyG"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Qb-Ig-jrV" userLabel="arcsin">
+                    <rect key="frame" x="100" y="0.0" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="sin⁻¹">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="zx8-d1-uM5"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jZm-9f-hHr" userLabel="cos">
+                    <rect key="frame" x="0.0" y="45" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="cos">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="bcl-AQ-xof"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tfa-JD-Gsc" userLabel="tan">
+                    <rect key="frame" x="0.0" y="90" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="tan">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="11C-NW-5df"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TEm-W7-knw" userLabel="BackspaceButton">
+                    <rect key="frame" x="249.5" y="0.0" width="70.5" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" image="Backspace">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-grey-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="backspacePressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="Bow-su-SKy"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Okw-H6-01q" userLabel="DismissButton">
+                    <rect key="frame" x="249.5" y="135" width="70.5" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="5"/>
+                    <state key="normal" image="Keyboard Down">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-grey-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="dismissPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="jce-Qx-dJ7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V1x-2b-VNB" userLabel="RadicalWithPowerButton">
+                    <rect key="frame" x="199.5" y="135" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
+                    <state key="normal" image="Sqrt with Power">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="num-button-disabled">
+                        <color key="titleColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="Sqrt Power Inverted" backgroundImage="Keyboard-green-pressed"/>
+                    <state key="highlighted" image="Sqrt Power Inverted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="rootWithPowerPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="2Dp-94-80e"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="shQ-1d-Zwk" userLabel="ePower">
+                    <rect key="frame" x="150" y="135" width="49.5" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="2"/>
+                    <state key="normal" image="E power">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="disabled" backgroundImage="num-button-disabled">
+                        <color key="titleColor" red="0.66666668650000005" green="0.66666668650000005" blue="0.66666668650000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected" image="Sqrt Power Inverted" backgroundImage="Keyboard-green-pressed"/>
+                    <state key="highlighted" image="Sqrt Power Inverted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="ePowerPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="JSc-sB-1te"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wJN-fd-8w4">
+                    <rect key="frame" x="50" y="135" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="20"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                    <state key="normal" title="y">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-marine-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="m5O-T5-VIc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbv-aA-vzZ" userLabel="z">
+                    <rect key="frame" x="100" y="135" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="20"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                    <state key="normal" title="z">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-marine-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="nN1-Pe-deU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjj-dh-DQX">
+                    <rect key="frame" x="0.0" y="135" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="GurmukhiMN" family="Gurmukhi MN" pointSize="20"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="10"/>
+                    <state key="normal" title="x">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-marine-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="keyPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="TBg-wB-GJU"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SoY-bF-U1R" userLabel="log_">
+                    <rect key="frame" x="199.5" y="45" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" image="Log with base">
+                        <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" image="Log Inverted" backgroundImage="Keyboard-green-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="logWithBasePressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="bZ9-jc-hLd"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HRf-k3-mED">
+                    <rect key="frame" x="249.5" y="45" width="70.5" height="90"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="Enter">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="highlighted" backgroundImage="Keyboard-grey-pressed">
+                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="enterPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="vqM-zJ-23b"/>
+                    </connections>
+                </button>
+                <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tqe-WT-SPb" userLabel="root">
+                    <rect key="frame" x="199.5" y="90" width="50" height="45"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                    <state key="normal" title="" image="Sqrt"/>
+                    <state key="selected" image="Sqrt Inverted" backgroundImage="Keyboard-green-pressed"/>
+                    <state key="highlighted" image="Sqrt Inverted" backgroundImage="Keyboard-green-pressed"/>
+                    <connections>
+                        <action selector="squareRootPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="aHK-IY-rVY"/>
+                    </connections>
+                </button>
+            </subviews>
+            <constraints>
+                <constraint firstItem="TEm-W7-knw" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="04g-h5-i07"/>
+                <constraint firstItem="shQ-1d-Zwk" firstAttribute="leading" secondItem="lbv-aA-vzZ" secondAttribute="trailing" id="1qx-OW-dOA"/>
+                <constraint firstItem="hYQ-ZZ-MHA" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2Ad-KO-LX1"/>
+                <constraint firstAttribute="bottom" secondItem="Okw-H6-01q" secondAttribute="bottom" id="2Dl-Yu-M8B"/>
+                <constraint firstItem="07b-92-INU" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="2oP-Wm-QbQ"/>
+                <constraint firstItem="lbv-aA-vzZ" firstAttribute="top" secondItem="zvM-rc-mmx" secondAttribute="bottom" id="36t-Sc-gyz"/>
+                <constraint firstAttribute="trailing" secondItem="Okw-H6-01q" secondAttribute="trailing" id="3g5-So-8op"/>
+                <constraint firstAttribute="bottom" secondItem="V1x-2b-VNB" secondAttribute="bottom" id="3yZ-pW-17u"/>
+                <constraint firstItem="9UW-zD-Z8y" firstAttribute="leading" secondItem="zvM-rc-mmx" secondAttribute="trailing" id="6Wy-U4-fc7"/>
+                <constraint firstItem="lbv-aA-vzZ" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="6ZB-WS-mMr"/>
+                <constraint firstItem="cjj-dh-DQX" firstAttribute="top" secondItem="tfa-JD-Gsc" secondAttribute="bottom" id="7Fe-HO-A6U"/>
+                <constraint firstItem="lbv-aA-vzZ" firstAttribute="leading" secondItem="wJN-fd-8w4" secondAttribute="trailing" id="7dZ-fu-v7w"/>
+                <constraint firstItem="9UW-zD-Z8y" firstAttribute="top" secondItem="Sim-EV-EtJ" secondAttribute="bottom" id="83b-aN-NbJ"/>
+                <constraint firstItem="jZm-9f-hHr" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="83o-gv-23t"/>
+                <constraint firstItem="Okw-H6-01q" firstAttribute="leading" secondItem="V1x-2b-VNB" secondAttribute="trailing" id="90Z-xp-qp7"/>
+                <constraint firstItem="DdP-EL-RKA" firstAttribute="top" secondItem="au8-l0-d5Z" secondAttribute="bottom" id="9dA-VW-tUO"/>
+                <constraint firstItem="Okw-H6-01q" firstAttribute="width" secondItem="TEm-W7-knw" secondAttribute="width" id="9y2-0t-NDH"/>
+                <constraint firstItem="hYQ-ZZ-MHA" firstAttribute="leading" secondItem="AOH-24-NeZ" secondAttribute="trailing" id="9zF-u8-MLY"/>
+                <constraint firstItem="AOH-24-NeZ" firstAttribute="leading" secondItem="9Qb-Ig-jrV" secondAttribute="trailing" id="A06-9y-GED"/>
+                <constraint firstAttribute="trailing" secondItem="HRf-k3-mED" secondAttribute="trailing" id="A9B-vg-gAT"/>
+                <constraint firstItem="tfa-JD-Gsc" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AL7-ig-Bwe"/>
+                <constraint firstItem="DdP-EL-RKA" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="AWL-hg-8h0"/>
+                <constraint firstItem="au8-l0-d5Z" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="C63-AH-9uS"/>
+                <constraint firstItem="HRf-k3-mED" firstAttribute="top" secondItem="TEm-W7-knw" secondAttribute="bottom" id="C95-Rj-dMd"/>
+                <constraint firstItem="DdP-EL-RKA" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="Dpv-Id-ixO"/>
+                <constraint firstItem="Sim-EV-EtJ" firstAttribute="leading" secondItem="581-zD-grS" secondAttribute="trailing" id="EyQ-wS-eYI"/>
+                <constraint firstItem="07b-92-INU" firstAttribute="leading" secondItem="UFR-kW-zBN" secondAttribute="trailing" id="FX7-L3-Eyj"/>
+                <constraint firstItem="lbv-aA-vzZ" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="FyN-0b-CA8"/>
+                <constraint firstItem="SoY-bF-U1R" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="GTP-ng-TGj"/>
+                <constraint firstItem="zvM-rc-mmx" firstAttribute="leading" secondItem="DdP-EL-RKA" secondAttribute="trailing" id="HEw-3N-L4k"/>
+                <constraint firstItem="TEm-W7-knw" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" multiplier="1.41" id="HsJ-50-vuC"/>
+                <constraint firstItem="tfa-JD-Gsc" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="IdC-75-AnZ"/>
+                <constraint firstItem="AOH-24-NeZ" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="Inh-P3-wQx"/>
+                <constraint firstItem="Sim-EV-EtJ" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="J6U-Cu-EzU"/>
+                <constraint firstItem="9UW-zD-Z8y" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="JcK-Ye-1X7"/>
+                <constraint firstItem="shQ-1d-Zwk" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="KvP-ct-d54"/>
+                <constraint firstItem="07b-92-INU" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="LWp-g4-pCd"/>
+                <constraint firstItem="uVO-HA-nRD" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Lak-gh-foM"/>
+                <constraint firstItem="tqe-WT-SPb" firstAttribute="top" secondItem="SoY-bF-U1R" secondAttribute="bottom" id="M53-Jm-Tbz"/>
+                <constraint firstItem="au8-l0-d5Z" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="MHP-UO-8ge"/>
+                <constraint firstItem="9Qb-Ig-jrV" firstAttribute="leading" secondItem="07b-92-INU" secondAttribute="trailing" id="MWb-wD-V7W"/>
+                <constraint firstItem="DdP-EL-RKA" firstAttribute="leading" secondItem="tfa-JD-Gsc" secondAttribute="trailing" id="Mcm-e9-J7K"/>
+                <constraint firstItem="wJN-fd-8w4" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="NuK-gM-sUn"/>
+                <constraint firstItem="Okw-H6-01q" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="QPt-vG-aMT"/>
+                <constraint firstItem="jZm-9f-hHr" firstAttribute="top" secondItem="UFR-kW-zBN" secondAttribute="bottom" id="Qh3-dV-9WX"/>
+                <constraint firstItem="jZm-9f-hHr" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="ReY-uW-ZCk"/>
+                <constraint firstItem="581-zD-grS" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="SfJ-mn-2qw"/>
+                <constraint firstItem="shQ-1d-Zwk" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="Tna-FP-Mp3"/>
+                <constraint firstAttribute="bottom" secondItem="uVO-HA-nRD" secondAttribute="bottom" id="UE7-fc-GKk"/>
+                <constraint firstAttribute="bottom" secondItem="lbv-aA-vzZ" secondAttribute="bottom" id="Uep-8g-0Qg"/>
+                <constraint firstItem="zvM-rc-mmx" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="Uqq-EQ-ttd"/>
+                <constraint firstItem="tfa-JD-Gsc" firstAttribute="top" secondItem="jZm-9f-hHr" secondAttribute="bottom" id="VhV-nT-jRx"/>
+                <constraint firstItem="HRf-k3-mED" firstAttribute="width" secondItem="TEm-W7-knw" secondAttribute="width" id="VnX-L2-s6l"/>
+                <constraint firstItem="07b-92-INU" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="WA7-iS-zLM"/>
+                <constraint firstItem="tfa-JD-Gsc" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="WIc-NK-s0d"/>
+                <constraint firstItem="UFR-kW-zBN" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="WzU-R5-mzE"/>
+                <constraint firstAttribute="bottom" secondItem="wJN-fd-8w4" secondAttribute="bottom" id="Xux-nQ-rcm"/>
+                <constraint firstItem="zvM-rc-mmx" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="YUX-72-NEW"/>
+                <constraint firstItem="Okw-H6-01q" firstAttribute="top" secondItem="HRf-k3-mED" secondAttribute="bottom" id="aBO-sJ-hlb"/>
+                <constraint firstItem="Sim-EV-EtJ" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="aOG-yZ-bZk"/>
+                <constraint firstItem="wJN-fd-8w4" firstAttribute="leading" secondItem="cjj-dh-DQX" secondAttribute="trailing" id="amH-BR-JqT"/>
+                <constraint firstItem="zvM-rc-mmx" firstAttribute="leading" secondItem="DdP-EL-RKA" secondAttribute="trailing" id="ap4-x6-9PV"/>
+                <constraint firstAttribute="bottom" secondItem="shQ-1d-Zwk" secondAttribute="bottom" id="cK3-cE-P63"/>
+                <constraint firstItem="cjj-dh-DQX" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="cd1-zG-zhH"/>
+                <constraint firstItem="Sim-EV-EtJ" firstAttribute="top" secondItem="AOH-24-NeZ" secondAttribute="bottom" id="cea-H9-97L"/>
+                <constraint firstItem="TEm-W7-knw" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="dEu-Ej-0qf"/>
+                <constraint firstItem="V1x-2b-VNB" firstAttribute="leading" secondItem="shQ-1d-Zwk" secondAttribute="trailing" id="eAs-YK-gq9"/>
+                <constraint firstAttribute="bottom" secondItem="cjj-dh-DQX" secondAttribute="bottom" id="epg-RA-Zad"/>
+                <constraint firstItem="uVO-HA-nRD" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fYT-aL-Acw"/>
+                <constraint firstItem="HRf-k3-mED" firstAttribute="leading" secondItem="SoY-bF-U1R" secondAttribute="trailing" id="fhU-Wl-S9K"/>
+                <constraint firstItem="hYQ-ZZ-MHA" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="hGC-lR-G60"/>
+                <constraint firstItem="HRf-k3-mED" firstAttribute="leading" secondItem="tqe-WT-SPb" secondAttribute="trailing" id="hNV-Vd-Rxb"/>
+                <constraint firstItem="AOH-24-NeZ" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="hQk-74-JBd"/>
+                <constraint firstAttribute="trailing" secondItem="uVO-HA-nRD" secondAttribute="trailing" id="haF-pd-8zr"/>
+                <constraint firstItem="wJN-fd-8w4" firstAttribute="top" secondItem="DdP-EL-RKA" secondAttribute="bottom" id="hcR-6t-XYs"/>
+                <constraint firstItem="V1x-2b-VNB" firstAttribute="top" secondItem="tqe-WT-SPb" secondAttribute="bottom" id="hvN-uX-CPk"/>
+                <constraint firstItem="shQ-1d-Zwk" firstAttribute="top" secondItem="9UW-zD-Z8y" secondAttribute="bottom" id="jKv-SA-doa"/>
+                <constraint firstItem="9Qb-Ig-jrV" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="keL-6u-hBR"/>
+                <constraint firstItem="9Qb-Ig-jrV" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="lyz-kQ-nbl"/>
+                <constraint firstItem="UFR-kW-zBN" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="mKZ-A9-3fc"/>
+                <constraint firstItem="SoY-bF-U1R" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="mSA-Ii-Y03"/>
+                <constraint firstItem="au8-l0-d5Z" firstAttribute="top" secondItem="07b-92-INU" secondAttribute="bottom" id="nSc-QE-HO8"/>
+                <constraint firstItem="jZm-9f-hHr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="oLq-bo-kWK"/>
+                <constraint firstItem="tqe-WT-SPb" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="pmQ-d0-0yD"/>
+                <constraint firstItem="au8-l0-d5Z" firstAttribute="leading" secondItem="jZm-9f-hHr" secondAttribute="trailing" id="rXC-fN-hSx"/>
+                <constraint firstItem="581-zD-grS" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="smA-mR-Ryv"/>
+                <constraint firstItem="zvM-rc-mmx" firstAttribute="top" secondItem="581-zD-grS" secondAttribute="bottom" id="tim-Um-4CA"/>
+                <constraint firstItem="cjj-dh-DQX" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="ufx-xD-afJ"/>
+                <constraint firstItem="V1x-2b-VNB" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="ujP-z6-gZg"/>
+                <constraint firstItem="9UW-zD-Z8y" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="uw3-Og-61i"/>
+                <constraint firstItem="SoY-bF-U1R" firstAttribute="leading" secondItem="Sim-EV-EtJ" secondAttribute="trailing" id="vlF-Ho-iy4"/>
+                <constraint firstItem="V1x-2b-VNB" firstAttribute="width" secondItem="UFR-kW-zBN" secondAttribute="width" id="w4t-ib-p7f"/>
+                <constraint firstItem="AOH-24-NeZ" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="w6b-9X-47m"/>
+                <constraint firstItem="581-zD-grS" firstAttribute="top" secondItem="9Qb-Ig-jrV" secondAttribute="bottom" id="wXQ-J8-SnO"/>
+                <constraint firstItem="9Qb-Ig-jrV" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="wnn-gE-BtW"/>
+                <constraint firstItem="hYQ-ZZ-MHA" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="wvm-7n-dSI"/>
+                <constraint firstItem="tqe-WT-SPb" firstAttribute="leading" secondItem="9UW-zD-Z8y" secondAttribute="trailing" id="x59-tW-nGI"/>
+                <constraint firstAttribute="trailing" secondItem="TEm-W7-knw" secondAttribute="trailing" id="xH8-HH-6bq"/>
+                <constraint firstItem="wJN-fd-8w4" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="xLj-1Q-wAr"/>
+                <constraint firstItem="SoY-bF-U1R" firstAttribute="top" secondItem="hYQ-ZZ-MHA" secondAttribute="bottom" id="xV1-jo-yAl"/>
+                <constraint firstItem="cjj-dh-DQX" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="xsW-uF-iFz"/>
+                <constraint firstItem="TEm-W7-knw" firstAttribute="leading" secondItem="hYQ-ZZ-MHA" secondAttribute="trailing" id="z88-ll-JjM"/>
+                <constraint firstItem="tqe-WT-SPb" firstAttribute="height" secondItem="UFR-kW-zBN" secondAttribute="height" id="zPy-ou-nNJ"/>
+                <constraint firstItem="581-zD-grS" firstAttribute="leading" secondItem="au8-l0-d5Z" secondAttribute="trailing" id="zVx-xj-cWC"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="radicalButton" destination="V1x-2b-VNB" id="E5x-ZL-HxO"/>
+                <outlet property="squareRootButton" destination="tqe-WT-SPb" id="rgV-im-55C"/>
+                <outletCollection property="variables" destination="wJN-fd-8w4" id="Yn9-Li-0Ps"/>
+                <outletCollection property="variables" destination="cjj-dh-DQX" id="XLC-uc-0cA"/>
+            </connections>
+            <point key="canvasLocation" x="300.80000000000001" y="487.55622188905551"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Backspace" width="69" height="44"/>
+        <image name="E power" width="62" height="55"/>
+        <image name="Functions Keyboard" width="429" height="241"/>
+        <image name="Keyboard Down" width="69" height="44"/>
+        <image name="Keyboard-green-pressed" width="44" height="44"/>
+        <image name="Keyboard-grey-pressed" width="44" height="44"/>
+        <image name="Keyboard-marine-pressed" width="44" height="44"/>
+        <image name="Log Inverted" width="51" height="44"/>
+        <image name="Log with base" width="50" height="44"/>
+        <image name="Sqrt" width="50" height="44"/>
+        <image name="Sqrt Inverted" width="50" height="44"/>
+        <image name="Sqrt Power Inverted" width="51" height="44"/>
+        <image name="Sqrt with Power" width="50" height="44"/>
+        <image name="num-button-disabled" width="44" height="44"/>
+    </resources>
+</document>

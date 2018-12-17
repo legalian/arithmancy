@@ -1,0 +1,592 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5B40121021AECEBD004C7B7A /* Technical.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B40120F21AECEBD004C7B7A /* Technical.swift */; };
+		5B43F3452188BB7C0058C570 /* MTDisplay+Editing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F3312188BB570058C570 /* MTDisplay+Editing.m */; };
+		5B43F3462188BB7C0058C570 /* MTMathList+Editing.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F3322188BB570058C570 /* MTMathList+Editing.m */; };
+		5B43F3472188BB7C0058C570 /* MTCaretView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F3332188BB570058C570 /* MTCaretView.m */; };
+		5B43F3482188BB7C0058C570 /* MTDisplay+Editing.h in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F3342188BB570058C570 /* MTDisplay+Editing.h */; };
+		5B43F3492188BB7C0058C570 /* MTCaretView.h in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F3352188BB570058C570 /* MTCaretView.h */; };
+		5B43F34A2188BB7C0058C570 /* MTMathList+Editing.h in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F3362188BB570058C570 /* MTMathList+Editing.h */; };
+		5B43F34B2188BB7C0058C570 /* MTEditableMathLabel.h in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F3382188BB570058C570 /* MTEditableMathLabel.h */; };
+		5B43F34C2188BB7C0058C570 /* MTEditableMathLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F3392188BB570058C570 /* MTEditableMathLabel.m */; };
+		5B43F34D2188BB7C0058C570 /* MTKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F33B2188BB570058C570 /* MTKeyboard.m */; };
+		5B43F34E2188BB7C0058C570 /* MTMathKeyboardRootView.h in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F33C2188BB570058C570 /* MTMathKeyboardRootView.h */; };
+		5B43F34F2188BB7C0058C570 /* MTKeyboard.h in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F33D2188BB570058C570 /* MTKeyboard.h */; };
+		5B43F3502188BB7C0058C570 /* MTMathKeyboardRootView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F33E2188BB570058C570 /* MTMathKeyboardRootView.m */; };
+		5B43F35E2188BC650058C570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F35D2188BC650058C570 /* Assets.xcassets */; };
+		5B43F3602188C0220058C570 /* EquationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F35F2188C0220058C570 /* EquationList.swift */; };
+		5B4661D221C5303F007E7C87 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4661D121C5303F007E7C87 /* Parser.swift */; };
+		5B595642218E7C5100398F8C /* MTKeyboardTab4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3522188BBD80058C570 /* MTKeyboardTab4.xib */; };
+		5B595643218E7C5100398F8C /* MTKeyboardTab3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3532188BBD80058C570 /* MTKeyboardTab3.xib */; };
+		5B595644218E7C5100398F8C /* MTKeyboardTab2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3542188BBD80058C570 /* MTKeyboardTab2.xib */; };
+		5B595645218E7C5100398F8C /* KeyboardAssests.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3552188BBD80058C570 /* KeyboardAssests.xcassets */; };
+		5B595646218E7C5100398F8C /* MTMathKeyboardRootView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3562188BBD80058C570 /* MTMathKeyboardRootView.xib */; };
+		5B595647218E7C5100398F8C /* MTKeyboard.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3572188BBD80058C570 /* MTKeyboard.xib */; };
+		5B595648218E7C5100398F8C /* WhiteBGKeyboardTab.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3582188BBD80058C570 /* WhiteBGKeyboardTab.xcassets */; };
+		5B595649218E7C5100398F8C /* lmroman10-bolditalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3592188BBD80058C570 /* lmroman10-bolditalic.otf */; };
+		5B59564A218E7C5100398F8C /* NewKeyboardAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F35A2188BBD80058C570 /* NewKeyboardAssets.xcassets */; };
+		5BD84E8E217E0DD7006C9CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84E8D217E0DD7006C9CB7 /* AppDelegate.swift */; };
+		5BD84E90217E0DD7006C9CB7 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD84E8F217E0DD7006C9CB7 /* art.scnassets */; };
+		5BD84E92217E0DD7006C9CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84E91217E0DD7006C9CB7 /* ViewController.swift */; };
+		5BD84E95217E0DD7006C9CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD84E93217E0DD7006C9CB7 /* Main.storyboard */; };
+		5BD84E9A217E0DDA006C9CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD84E98217E0DDA006C9CB7 /* LaunchScreen.storyboard */; };
+		C13D2CC4FCE952E5E574B0AA /* libPods-Calcuplot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1DE8DD9F970E981AE9D0B3 /* libPods-Calcuplot.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		5B40120F21AECEBD004C7B7A /* Technical.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Technical.swift; sourceTree = "<group>"; };
+		5B43F3282187E05B0058C570 /* bridgingheader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bridgingheader.h; sourceTree = "<group>"; };
+		5B43F32921889AFD0058C570 /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		5B43F3312188BB570058C570 /* MTDisplay+Editing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MTDisplay+Editing.m"; sourceTree = "<group>"; };
+		5B43F3322188BB570058C570 /* MTMathList+Editing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MTMathList+Editing.m"; sourceTree = "<group>"; };
+		5B43F3332188BB570058C570 /* MTCaretView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTCaretView.m; sourceTree = "<group>"; };
+		5B43F3342188BB570058C570 /* MTDisplay+Editing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MTDisplay+Editing.h"; sourceTree = "<group>"; };
+		5B43F3352188BB570058C570 /* MTCaretView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTCaretView.h; sourceTree = "<group>"; };
+		5B43F3362188BB570058C570 /* MTMathList+Editing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MTMathList+Editing.h"; sourceTree = "<group>"; };
+		5B43F3382188BB570058C570 /* MTEditableMathLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTEditableMathLabel.h; sourceTree = "<group>"; };
+		5B43F3392188BB570058C570 /* MTEditableMathLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTEditableMathLabel.m; sourceTree = "<group>"; };
+		5B43F33B2188BB570058C570 /* MTKeyboard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTKeyboard.m; sourceTree = "<group>"; };
+		5B43F33C2188BB570058C570 /* MTMathKeyboardRootView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTMathKeyboardRootView.h; sourceTree = "<group>"; };
+		5B43F33D2188BB570058C570 /* MTKeyboard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTKeyboard.h; sourceTree = "<group>"; };
+		5B43F33E2188BB570058C570 /* MTMathKeyboardRootView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MTMathKeyboardRootView.m; sourceTree = "<group>"; };
+		5B43F3522188BBD80058C570 /* MTKeyboardTab4.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTKeyboardTab4.xib; sourceTree = "<group>"; };
+		5B43F3532188BBD80058C570 /* MTKeyboardTab3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTKeyboardTab3.xib; sourceTree = "<group>"; };
+		5B43F3542188BBD80058C570 /* MTKeyboardTab2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTKeyboardTab2.xib; sourceTree = "<group>"; };
+		5B43F3552188BBD80058C570 /* KeyboardAssests.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = KeyboardAssests.xcassets; sourceTree = "<group>"; };
+		5B43F3562188BBD80058C570 /* MTMathKeyboardRootView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTMathKeyboardRootView.xib; sourceTree = "<group>"; };
+		5B43F3572188BBD80058C570 /* MTKeyboard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MTKeyboard.xib; sourceTree = "<group>"; };
+		5B43F3582188BBD80058C570 /* WhiteBGKeyboardTab.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = WhiteBGKeyboardTab.xcassets; sourceTree = "<group>"; };
+		5B43F3592188BBD80058C570 /* lmroman10-bolditalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "lmroman10-bolditalic.otf"; sourceTree = "<group>"; };
+		5B43F35A2188BBD80058C570 /* NewKeyboardAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = NewKeyboardAssets.xcassets; sourceTree = "<group>"; };
+		5B43F35D2188BC650058C570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5B43F35F2188C0220058C570 /* EquationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationList.swift; sourceTree = "<group>"; };
+		5B4661D121C5303F007E7C87 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		5BD84E8A217E0DD7006C9CB7 /* Calcuplot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calcuplot.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5BD84E8D217E0DD7006C9CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5BD84E8F217E0DD7006C9CB7 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
+		5BD84E91217E0DD7006C9CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5BD84E94217E0DD7006C9CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5BD84E99217E0DDA006C9CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5BD84E9B217E0DDA006C9CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		63EAFCC445DBA91CFB79B7D9 /* Pods-Calcuplot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calcuplot.debug.xcconfig"; path = "Calcuplot/Pods/Target Support Files/Pods-Calcuplot/Pods-Calcuplot.debug.xcconfig"; sourceTree = "<group>"; };
+		BB1DE8DD9F970E981AE9D0B3 /* libPods-Calcuplot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Calcuplot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4E996E8C26B8EEAC5BF2A50 /* Pods-Calcuplot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calcuplot.release.xcconfig"; path = "Calcuplot/Pods/Target Support Files/Pods-Calcuplot/Pods-Calcuplot.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5BD84E87217E0DD7006C9CB7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C13D2CC4FCE952E5E574B0AA /* libPods-Calcuplot.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5B43F32F2188BB570058C570 /* mathEditor */ = {
+			isa = PBXGroup;
+			children = (
+				5B43F3302188BB570058C570 /* internal */,
+				5B43F3372188BB570058C570 /* editor */,
+				5B43F33A2188BB570058C570 /* keyboard */,
+			);
+			path = mathEditor;
+			sourceTree = "<group>";
+		};
+		5B43F3302188BB570058C570 /* internal */ = {
+			isa = PBXGroup;
+			children = (
+				5B43F3312188BB570058C570 /* MTDisplay+Editing.m */,
+				5B43F3322188BB570058C570 /* MTMathList+Editing.m */,
+				5B43F3332188BB570058C570 /* MTCaretView.m */,
+				5B43F3342188BB570058C570 /* MTDisplay+Editing.h */,
+				5B43F3352188BB570058C570 /* MTCaretView.h */,
+				5B43F3362188BB570058C570 /* MTMathList+Editing.h */,
+			);
+			path = internal;
+			sourceTree = "<group>";
+		};
+		5B43F3372188BB570058C570 /* editor */ = {
+			isa = PBXGroup;
+			children = (
+				5B43F3382188BB570058C570 /* MTEditableMathLabel.h */,
+				5B43F3392188BB570058C570 /* MTEditableMathLabel.m */,
+			);
+			path = editor;
+			sourceTree = "<group>";
+		};
+		5B43F33A2188BB570058C570 /* keyboard */ = {
+			isa = PBXGroup;
+			children = (
+				5B43F33B2188BB570058C570 /* MTKeyboard.m */,
+				5B43F33C2188BB570058C570 /* MTMathKeyboardRootView.h */,
+				5B43F33D2188BB570058C570 /* MTKeyboard.h */,
+				5B43F33E2188BB570058C570 /* MTMathKeyboardRootView.m */,
+			);
+			path = keyboard;
+			sourceTree = "<group>";
+		};
+		5B43F3512188BBD80058C570 /* MathKeyboardResources */ = {
+			isa = PBXGroup;
+			children = (
+				5B43F3522188BBD80058C570 /* MTKeyboardTab4.xib */,
+				5B43F3532188BBD80058C570 /* MTKeyboardTab3.xib */,
+				5B43F3542188BBD80058C570 /* MTKeyboardTab2.xib */,
+				5B43F3552188BBD80058C570 /* KeyboardAssests.xcassets */,
+				5B43F3562188BBD80058C570 /* MTMathKeyboardRootView.xib */,
+				5B43F3572188BBD80058C570 /* MTKeyboard.xib */,
+				5B43F3582188BBD80058C570 /* WhiteBGKeyboardTab.xcassets */,
+				5B43F3592188BBD80058C570 /* lmroman10-bolditalic.otf */,
+				5B43F35A2188BBD80058C570 /* NewKeyboardAssets.xcassets */,
+			);
+			path = MathKeyboardResources;
+			sourceTree = "<group>";
+		};
+		5BD84E81217E0DD7006C9CB7 = {
+			isa = PBXGroup;
+			children = (
+				5BD84E8C217E0DD7006C9CB7 /* Calcuplot */,
+				5BD84E8B217E0DD7006C9CB7 /* Products */,
+				B6A4FC1EC593AC70F238F8B7 /* Pods */,
+				A11C0C9958227F59B14ECDED /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		5BD84E8B217E0DD7006C9CB7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5BD84E8A217E0DD7006C9CB7 /* Calcuplot.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5BD84E8C217E0DD7006C9CB7 /* Calcuplot */ = {
+			isa = PBXGroup;
+			children = (
+				5B43F32F2188BB570058C570 /* mathEditor */,
+				5B43F3512188BBD80058C570 /* MathKeyboardResources */,
+				5B43F35D2188BC650058C570 /* Assets.xcassets */,
+				5BD84E8F217E0DD7006C9CB7 /* art.scnassets */,
+				5BD84E8D217E0DD7006C9CB7 /* AppDelegate.swift */,
+				5BD84E91217E0DD7006C9CB7 /* ViewController.swift */,
+				5B43F35F2188C0220058C570 /* EquationList.swift */,
+				5B40120F21AECEBD004C7B7A /* Technical.swift */,
+				5B4661D121C5303F007E7C87 /* Parser.swift */,
+				5BD84E93217E0DD7006C9CB7 /* Main.storyboard */,
+				5BD84E98217E0DDA006C9CB7 /* LaunchScreen.storyboard */,
+				5BD84E9B217E0DDA006C9CB7 /* Info.plist */,
+				5B43F3282187E05B0058C570 /* bridgingheader.h */,
+				5B43F32921889AFD0058C570 /* Podfile */,
+			);
+			path = Calcuplot;
+			sourceTree = "<group>";
+		};
+		A11C0C9958227F59B14ECDED /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BB1DE8DD9F970E981AE9D0B3 /* libPods-Calcuplot.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6A4FC1EC593AC70F238F8B7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				63EAFCC445DBA91CFB79B7D9 /* Pods-Calcuplot.debug.xcconfig */,
+				F4E996E8C26B8EEAC5BF2A50 /* Pods-Calcuplot.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5BD84E89217E0DD7006C9CB7 /* Calcuplot */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5BD84E9E217E0DDA006C9CB7 /* Build configuration list for PBXNativeTarget "Calcuplot" */;
+			buildPhases = (
+				4CB785FA3E7E9C2EB4743127 /* [CP] Check Pods Manifest.lock */,
+				5BD84E86217E0DD7006C9CB7 /* Sources */,
+				5BD84E87217E0DD7006C9CB7 /* Frameworks */,
+				5BD84E88217E0DD7006C9CB7 /* Resources */,
+				1D2E576B702EF3830A547FC3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Calcuplot;
+			productName = Calcuplot;
+			productReference = 5BD84E8A217E0DD7006C9CB7 /* Calcuplot.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5BD84E82217E0DD7006C9CB7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = Parker;
+				TargetAttributes = {
+					5BD84E89217E0DD7006C9CB7 = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 5BD84E85217E0DD7006C9CB7 /* Build configuration list for PBXProject "Calcuplot" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5BD84E81217E0DD7006C9CB7;
+			productRefGroup = 5BD84E8B217E0DD7006C9CB7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5BD84E89217E0DD7006C9CB7 /* Calcuplot */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5BD84E88217E0DD7006C9CB7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B595642218E7C5100398F8C /* MTKeyboardTab4.xib in Resources */,
+				5B595643218E7C5100398F8C /* MTKeyboardTab3.xib in Resources */,
+				5B595644218E7C5100398F8C /* MTKeyboardTab2.xib in Resources */,
+				5B595645218E7C5100398F8C /* KeyboardAssests.xcassets in Resources */,
+				5B595646218E7C5100398F8C /* MTMathKeyboardRootView.xib in Resources */,
+				5B595647218E7C5100398F8C /* MTKeyboard.xib in Resources */,
+				5B595648218E7C5100398F8C /* WhiteBGKeyboardTab.xcassets in Resources */,
+				5B595649218E7C5100398F8C /* lmroman10-bolditalic.otf in Resources */,
+				5B59564A218E7C5100398F8C /* NewKeyboardAssets.xcassets in Resources */,
+				5BD84E90217E0DD7006C9CB7 /* art.scnassets in Resources */,
+				5BD84E9A217E0DDA006C9CB7 /* LaunchScreen.storyboard in Resources */,
+				5B43F35E2188BC650058C570 /* Assets.xcassets in Resources */,
+				5BD84E95217E0DD7006C9CB7 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1D2E576B702EF3830A547FC3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Calcuplot/Pods/Target Support Files/Pods-Calcuplot/Pods-Calcuplot-resources.sh",
+				"${PODS_CONFIGURATION_BUILD_DIR}/iosMath/mathFonts.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mathFonts.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Calcuplot/Pods/Target Support Files/Pods-Calcuplot/Pods-Calcuplot-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4CB785FA3E7E9C2EB4743127 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Calcuplot-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5BD84E86217E0DD7006C9CB7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5B43F3482188BB7C0058C570 /* MTDisplay+Editing.h in Sources */,
+				5B43F3492188BB7C0058C570 /* MTCaretView.h in Sources */,
+				5B43F34A2188BB7C0058C570 /* MTMathList+Editing.h in Sources */,
+				5B43F34B2188BB7C0058C570 /* MTEditableMathLabel.h in Sources */,
+				5B43F34E2188BB7C0058C570 /* MTMathKeyboardRootView.h in Sources */,
+				5B40121021AECEBD004C7B7A /* Technical.swift in Sources */,
+				5B43F34F2188BB7C0058C570 /* MTKeyboard.h in Sources */,
+				5B43F3452188BB7C0058C570 /* MTDisplay+Editing.m in Sources */,
+				5B43F3462188BB7C0058C570 /* MTMathList+Editing.m in Sources */,
+				5B43F3472188BB7C0058C570 /* MTCaretView.m in Sources */,
+				5B43F34C2188BB7C0058C570 /* MTEditableMathLabel.m in Sources */,
+				5B43F34D2188BB7C0058C570 /* MTKeyboard.m in Sources */,
+				5B43F3502188BB7C0058C570 /* MTMathKeyboardRootView.m in Sources */,
+				5B43F3602188C0220058C570 /* EquationList.swift in Sources */,
+				5BD84E92217E0DD7006C9CB7 /* ViewController.swift in Sources */,
+				5B4661D221C5303F007E7C87 /* Parser.swift in Sources */,
+				5BD84E8E217E0DD7006C9CB7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		5BD84E93217E0DD7006C9CB7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BD84E94217E0DD7006C9CB7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5BD84E98217E0DDA006C9CB7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5BD84E99217E0DDA006C9CB7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5BD84E9C217E0DDA006C9CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5BD84E9D217E0DDA006C9CB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5BD84E9F217E0DDA006C9CB7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 63EAFCC445DBA91CFB79B7D9 /* Pods-Calcuplot.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VUHKP7FXUN;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				INFOPLIST_FILE = Calcuplot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"iosMath\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "n-a.Calcuplot";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Calcuplot/bridgingheader.h;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5BD84EA0217E0DDA006C9CB7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F4E996E8C26B8EEAC5BF2A50 /* Pods-Calcuplot.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VUHKP7FXUN;
+				GCC_WARN_STRICT_SELECTOR_MATCH = YES;
+				INFOPLIST_FILE = Calcuplot/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"iosMath\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreText\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"UIKit\"",
+					"-all_load",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "n-a.Calcuplot";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = Calcuplot/bridgingheader.h;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5BD84E85217E0DD7006C9CB7 /* Build configuration list for PBXProject "Calcuplot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BD84E9C217E0DDA006C9CB7 /* Debug */,
+				5BD84E9D217E0DDA006C9CB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5BD84E9E217E0DDA006C9CB7 /* Build configuration list for PBXNativeTarget "Calcuplot" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5BD84E9F217E0DDA006C9CB7 /* Debug */,
+				5BD84EA0217E0DDA006C9CB7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5BD84E82217E0DD7006C9CB7 /* Project object */;
+}
