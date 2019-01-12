@@ -117,7 +117,7 @@
 - (void)fractionPressed:(id)sender
 {
     [self playClickForCustomKeyTap];
-    [self.textView insertText:MTSymbolFractionSlash];
+    [self.textView insertText:@"/"];
 }
 
 - (IBAction)exponentPressed:(id)sender
@@ -152,7 +152,6 @@
 - (IBAction)logWithBasePressed:(id)sender {
     [self playClickForCustomKeyTap];
     [self.textView insertText:@"log"];
-    [self.textView insertText:@"_"];
 }
 - (IBAction)ePowerPressed:(id)sender {
     [self playClickForCustomKeyTap];
@@ -295,7 +294,7 @@
 
 - (void) setRadicalState:(BOOL) highlighted
 {
-    self.radicalButton.selected = highlighted;
+//    self.radicalButton.selected = highlighted;
 }
 
 #pragma mark -

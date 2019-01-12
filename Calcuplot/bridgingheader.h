@@ -10,5 +10,9 @@
 #define bridgingheader_h
 #import "mathEditor/editor/MTEditableMathLabel.h"
 #import "mathEditor/keyboard/MTMathKeyboardRootView.h"
+//#import "Pods/iosMath/iosMath/IosMath.h"
+//#import "Pods/iosMath/iosMath/render/MTMathUILabel.h"
+
 
 #endif /* bridgingheader_h */
+

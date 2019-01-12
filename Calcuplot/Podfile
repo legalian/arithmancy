@@ -2,5 +2,6 @@
 project '../Calcuplot.xcodeproj'
 
 target 'Calcuplot' do
+  use_frameworks!
   pod 'iosMath'
 end
