@@ -47,9 +47,11 @@ class EquationCellController: UITableViewCell,MTEditableMathLabelDelegate {
 class CellData {
     var function: MTMathList
     var color: MTMathList
+    var parsedfunc: MathStruct
+    var parsedcolor: MathStruct
     var selector: Int
-    init(_ f:MTMathList,_ c:MTMathList,_ i:Int) {function = f;color = c;selector = i}
-    init() {function = MTMathList();color = MTMathList();selector = 1}
+    init(_ f:MTMathList,_ c:MTMathList,_ i:Int) {function = f;color = c;selector = i;parsedfunc = parse(function.atoms);parsedcolor = parse(color.atoms);}
+    init() {function = MTMathList();color = MTMathList();selector = 1;parsedcolor = .error;parsedfunc = .error}
 }
 
 
@@ -57,6 +59,7 @@ class CellData {
 class EquationListController: UIViewController,UITableViewDataSource,UITableViewDelegate {
     @IBOutlet var strongref : UITableView!
     var equations: [CellData] = []
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {return equations.count+1}
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if indexPath.row == equations.count {return tableView.dequeueReusableCell(withIdentifier: "addnewcell")!}
@@ -100,6 +103,8 @@ class ScratchpadListController: UIViewController,UITableViewDataSource,UITableVi
     @IBOutlet var mathLabel : MTEditableMathLabel!
     @IBOutlet weak var spacerBottomLayoutConstraint: NSLayoutConstraint!
     
+    weak var equations : EquationListController? = nil
+    
     var questions : [MTMathList] = []
     var answers : [String] = []
 
@@ -118,7 +123,7 @@ class ScratchpadListController: UIViewController,UITableViewDataSource,UITableVi
         let vog = parse(label.mathList.atoms)
         switch vog {
             case .scalar(let a):
-            answers.append(a.simplifyNarrow().latex())
+            answers.append(a.latex())
             case .vector2(let a): answers.append(a.latex())
             case .vector3(let a): answers.append(a.latex())
             default: answers.append("ERROR")
@@ -160,19 +165,24 @@ class MenuTabsView: UIPageViewController, UIPageViewControllerDelegate, UIPageVi
         return UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: viewController)
     }
     lazy var orderedViewControllers: [UIViewController] = {
-        return [self.newVc(viewController: "graphs"),
+        let gez = [self.newVc(viewController: "graphs"),
                 self.newVc(viewController: "memory"),
                 self.newVc(viewController: "scratchpad")]
+        (gez[0] as! GraphingView).equations = (gez[1] as! EquationListController)
+        (gez[2] as! ScratchpadListController).equations = (gez[1] as! EquationListController)
+        return gez
     }()
     func pageViewController(_ _: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let ind = orderedViewControllers.index(of: viewController)!
-        if ind==0 {return orderedViewControllers.last}
-        return orderedViewControllers[ind-1]
+        var ind = orderedViewControllers.index(of: viewController)!
+        ind = (ind-1)%%3
+        if let gra = orderedViewControllers[ind] as? GraphingView {gra.updateGraphs()}
+        return orderedViewControllers[ind]
     }
     func pageViewController(_ _: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let ind = orderedViewControllers.index(of: viewController)!
-        if ind==orderedViewControllers.count-1 {return orderedViewControllers.first}
-        return orderedViewControllers[ind+1]
+        var ind = orderedViewControllers.index(of: viewController)!
+        ind = (ind+1)%%3
+        if let gra = orderedViewControllers[ind] as? GraphingView {gra.updateGraphs()}
+        return orderedViewControllers[ind]
     }
     override func viewDidLoad() {
         super.viewDidLoad()

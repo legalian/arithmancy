@@ -20,10 +20,10 @@ enum MathStruct {
 func *(_ a:MathStruct,_ b:MathStruct) -> MathStruct {
     switch (a,b) {
         case (.scalar(let a),.scalar(let b)): return .scalar(a*b)
-        case (.scalar(let a),.vector2(let b)): return .vector2(ScalarProd2(a,b))
-        case (.scalar(let a),.vector3(let b)): return .vector3(ScalarProd3(a,b))
-        case (.vector2(let a),.scalar(let b)): return .vector2(ScalarProd2(b,a))
-        case (.vector3(let a),.scalar(let b)): return .vector3(ScalarProd3(b,a))
+        case (.scalar(let a),.vector2(let b)): return .vector2(a*b)
+        case (.scalar(let a),.vector3(let b)): return .vector3(a*b)
+        case (.vector2(let a),.scalar(let b)): return .vector2(a*b)
+        case (.vector3(let a),.scalar(let b)): return .vector3(a*b)
         default: return .error
     }
 }
@@ -108,25 +108,25 @@ func parse(_ tokens: [MTMathAtom],_ i:Int = 0,_ mm:Int = -1) -> MathStruct {
                             if subsc(tokens[g]) != nil || supsc(tokens[g]) != nil {return .error}
                             switch (op,l,r) {
                                 case ("+",.scalar(let a),.scalar(let b)): return .scalar(a+b)
-                                case ("−",.scalar(let a),.scalar(let b)): return .scalar(a+b*Scalar(-1))
+                                case ("−",.scalar(let a),.scalar(let b)): return .scalar(a-b)
                                 case ("·",.scalar(let a),.scalar(let b)): return .scalar(a*b)
                                 case ("×",.scalar(let a),.scalar(let b)): return .scalar(a*b)
                                 case ("+",.vector2(let a),.vector2(let b)): return .vector2(a+b)
-                                case ("−",.vector2(let a),.vector2(let b)): return .vector2(a+ScalarProd2(Scalar(-1),b))
-                                case ("·",.vector2(let a),.vector2(let b)): return .scalar(DotProd2(a,b))
-                                case ("×",.vector2(let a),.vector2(let b)): return .scalar(CrossProd2(a,b))
+                                case ("−",.vector2(let a),.vector2(let b)): return .vector2(a-b)
+                                case ("·",.vector2(let a),.vector2(let b)): return .scalar(.dot2(a,b))
+                                case ("×",.vector2(let a),.vector2(let b)): return .scalar(.cross2(a,b))
                                 case ("+",.vector3(let a),.vector3(let b)): return .vector3(a+b)
-                                case ("−",.vector3(let a),.vector3(let b)): return .vector3(a+ScalarProd3(Scalar(-1),b))
-                                case ("·",.vector3(let a),.vector3(let b)): return .scalar(DotProd3(a,b))
-                                case ("×",.vector3(let a),.vector3(let b)): return .vector3(CrossProd3(a,b))
-                                case ("·",.vector2(let a),.scalar(let b)): return .vector2(ScalarProd2(b,a))
-                                case ("×",.vector2(let a),.scalar(let b)): return .vector2(ScalarProd2(b,a))
-                                case ("·",.scalar(let a),.vector2(let b)): return .vector2(ScalarProd2(a,b))
-                                case ("×",.scalar(let a),.vector2(let b)): return .vector2(ScalarProd2(a,b))
-                                case ("·",.vector3(let a),.scalar(let b)): return .vector3(ScalarProd3(b,a))
-                                case ("×",.vector3(let a),.scalar(let b)): return .vector3(ScalarProd3(b,a))
-                                case ("·",.scalar(let a),.vector3(let b)): return .vector3(ScalarProd3(a,b))
-                                case ("×",.scalar(let a),.vector3(let b)): return .vector3(ScalarProd3(a,b))
+                                case ("−",.vector3(let a),.vector3(let b)): return .vector3(a-b)
+                                case ("·",.vector3(let a),.vector3(let b)): return .scalar(.dot3(a,b))
+                                case ("×",.vector3(let a),.vector3(let b)): return .vector3(.cross3(a,b))
+                                case ("·",.vector2(let a),.scalar(let b)): return .vector2(a*b)
+                                case ("×",.vector2(let a),.scalar(let b)): return .vector2(a*b)
+                                case ("·",.scalar(let a),.vector2(let b)): return .vector2(a*b)
+                                case ("×",.scalar(let a),.vector2(let b)): return .vector2(a*b)
+                                case ("·",.vector3(let a),.scalar(let b)): return .vector3(a*b)
+                                case ("×",.vector3(let a),.scalar(let b)): return .vector3(a*b)
+                                case ("·",.scalar(let a),.vector3(let b)): return .vector3(a*b)
+                                case ("×",.scalar(let a),.vector3(let b)): return .vector3(a*b)
                                 default: return .error
                             }
                         }
@@ -156,49 +156,49 @@ func parse(_ tokens: [MTMathAtom],_ i:Int = 0,_ mm:Int = -1) -> MathStruct {
 //            print(conseq.last.latex())
             print("gohak")
             j=j+1
-        } else if ("0"..."9").contains(tokens[j].nucleus) || tokens[j].nucleus=="." {
-            var pred = ""
-            var post = 0
-            var hd = false
-            var volexp:Scalar? = nil
-            while j<m {
-                if ("0"..."9").contains(tokens[j].nucleus) {
-                    pred = pred+tokens[j].nucleus
-                    if hd {post=post+1}
-                } else if tokens[j].nucleus=="." {
-                    if hd {return .error}
-                    hd = true
-                } else {break}
-                if subsc(tokens[j]) != nil {return .error}
-                if let exp = supsc(tokens[j]) {
-                    switch exp {
-                        case .scalar(let ju): volexp = ju
+        } else {
+            switch tokens[j].nucleus {
+                case "-":conseq.append(.scalar(.constant(-1)))
+                case "d":return .error
+                case "f":
+                    if let nun = tokens[j].subScript, let num = Int(nun.stringValue) {
+                        conseq.append(fcallSL(tokens,&j,m){g in .constant(num)})
+                    } else {return .error}
+                case "a"..."z","A"..."Z","α","Δ","σ","μ","λ","ρ","ω","Φ","ν","β","φ","θ","π":
+                    if subsc(tokens[j]) != nil {return .error}
+                    switch (supsc(tokens[j])) {
+                        case .some(.scalar(let ju)): conseq.append(.scalar(pow(.special(tokens[j].nucleus),ju)))
+                        case .none: conseq.append(.scalar(.special(tokens[j].nucleus)))
                         default: return .error
                     }
                     j=j+1
-                    break;
-                }
-                j=j+1
-            }
-            if pred == "" {return .error}
-            if volexp==nil {conseq.append(.scalar(exactdivide(Int(pred)!,pow(10,post))))}
-            else {conseq.append(.scalar(pow(exactdivide(Int(pred)!,pow(10,post)),volexp!)))}
-        } else if tokens[j].nucleus=="−" {conseq.append(.scalar(Scalar(-1)))
-        } else if tokens[j].nucleus=="d" {return .error
-        } else if tokens[j].nucleus=="f" {
-            if let nun = tokens[j].subScript, let num = Int(nun.stringValue) {
-                conseq.append(fcallSL(tokens,&j,m){g in Scalar(num)})
-            } else {return .error}
-        } else if ("a"..."z").contains(tokens[j].nucleus) || ("A"..."Z").contains(tokens[j].nucleus) || "αΔσμλρωΦνβφθπ".contains(tokens[j].nucleus) {
-            if subsc(tokens[j]) != nil {return .error}
-            switch (supsc(tokens[j])) {
-                case .some(.scalar(let ju)): conseq.append(.scalar(pow(SpecialRef(tokens[j].nucleus),ju)))
-                case .none: conseq.append(.scalar(SpecialRef(tokens[j].nucleus)))
-                default: return .error
-            }
-            j=j+1
-        } else {
-            switch tokens[j].nucleus {
+                case "0"..."9",".":
+                    var pred = ""
+                    var post = 0
+                    var hd = false
+                    var volexp:Scalar? = nil
+                    while j<m {
+                        if ("0"..."9").contains(tokens[j].nucleus) {
+                            pred = pred+tokens[j].nucleus
+                            if hd {post=post+1}
+                        } else if tokens[j].nucleus=="." {
+                            if hd {return .error}
+                            hd = true
+                        } else {break}
+                        if subsc(tokens[j]) != nil {return .error}
+                        if let exp = supsc(tokens[j]) {
+                            switch exp {
+                                case .scalar(let ju): volexp = ju
+                                default: return .error
+                            }
+                            j=j+1
+                            break;
+                        }
+                        j=j+1
+                    }
+                    if pred == "" {return .error}
+                    if volexp==nil {conseq.append(.scalar(exactdivide(Int(pred)!,pow(10,post))))}
+                    else {conseq.append(.scalar(pow(exactdivide(Int(pred)!,pow(10,post)),volexp!)))}
                 case "(":
                 if subsc(tokens[j]) != nil || supsc(tokens[j]) != nil {return .error}
                 conseq.append(powparseuntilS(tokens,&j,m,")"){g in g})
@@ -215,33 +215,33 @@ func parse(_ tokens: [MTMathAtom],_ i:Int = 0,_ mm:Int = -1) -> MathStruct {
                     let f = tokens[j].nucleus
                     j=j+1
                     switch (gh,a,b) {
-                        case (.scalar(let g), .scalar(let a),.scalar(let b)): conseq.append(.scalar(Integral(g,a,b,f)))
-                        case (.vector2(let g),.scalar(let a),.scalar(let b)): conseq.append(.vector2(Integral2(g,a,b,f)))
-                        case (.vector3(let g),.scalar(let a),.scalar(let b)): conseq.append(.vector3(Integral3(g,a,b,f)))
+                        case (.scalar(let g), .scalar(let a),.scalar(let b)): conseq.append(.scalar(.integral(g,a,b,f)))
+                        case (.vector2(let g),.scalar(let a),.scalar(let b)): conseq.append(.vector2(.integral(g,a,b,f)))
+                        case (.vector3(let g),.scalar(let a),.scalar(let b)): conseq.append(.vector3(.integral(g,a,b,f)))
                         default: return .error
                     }
                 } else {return .error}
                 case "‖":
                 if subsc(tokens[j]) != nil || supsc(tokens[j]) != nil {return .error}
                 conseq.append(powparseuntil(tokens,&j,m,"‖"){gh in switch gh {
-                    case .vector2(let a): return .scalar(Magnitude2(a))
-                    case .vector3(let a): return .scalar(Magnitude3(a))
+                    case .vector2(let a): return .scalar(.abs2(a))
+                    case .vector3(let a): return .scalar(.abs3(a))
                     default: return .error
                 }})
                 case "|":
                 if subsc(tokens[j]) != nil || supsc(tokens[j]) != nil {return .error}
-                conseq.append(powparseuntilS(tokens,&j,m,"|"){g in Abs(g)})
+                conseq.append(powparseuntilS(tokens,&j,m,"|"){g in .abs(g)})
                 
                 
-                case "min": conseq.append(fcallSL(tokens,&j,m){g in MinScalar(g)})
-                case "max": conseq.append(fcallSL(tokens,&j,m){g in MaxScalar(g)})
+                case "min": conseq.append(fcallSL(tokens,&j,m){g in .min(g)})
+                case "max": conseq.append(fcallSL(tokens,&j,m){g in .max(g)})
                 
-                case "sin": conseq.append(fcallS(tokens,&j,m){g in SinScalar(g)})
-                case "cos": conseq.append(fcallS(tokens,&j,m){g in CosScalar(g)})
-                case "sec": conseq.append(fcallS(tokens,&j,m){g in pow(CosScalar(g),-1)})
-                case "csc": conseq.append(fcallS(tokens,&j,m){g in pow(SinScalar(g),-1)})
-                case "tan": conseq.append(fcallS(tokens,&j,m){g in SinScalar(g)*pow(CosScalar(g),-1)})
-                case "cot": conseq.append(fcallS(tokens,&j,m){g in CosScalar(g)*pow(SinScalar(g),-1)})
+                case "sin": conseq.append(fcallS(tokens,&j,m){g in .sin(g)})
+                case "cos": conseq.append(fcallS(tokens,&j,m){g in .cos(g)})
+                case "sec": conseq.append(fcallS(tokens,&j,m){g in reciprocal(.cos(g))})
+                case "csc": conseq.append(fcallS(tokens,&j,m){g in reciprocal(.sin(g))})
+                case "tan": conseq.append(fcallS(tokens,&j,m){g in .sin(g) / .cos(g)})
+                case "cot": conseq.append(fcallS(tokens,&j,m){g in .cos(g) / .sin(g)})
                 
                 case "arcsin": conseq.append(fcall(tokens,&j,m){g in .error})
                 case "arccos": conseq.append(fcall(tokens,&j,m){g in .error})
@@ -251,7 +251,7 @@ func parse(_ tokens: [MTMathAtom],_ i:Int = 0,_ mm:Int = -1) -> MathStruct {
                 case "cosh": conseq.append(fcall(tokens,&j,m){g in .error})
                 case "tanh": conseq.append(fcall(tokens,&j,m){g in .error})
 
-                case "ln": conseq.append(fcallS(tokens,&j,m){g in LnScalar(g)})
+                case "ln": conseq.append(fcallS(tokens,&j,m){g in .ln(g)})
                 
                 
                 case "log":
@@ -259,7 +259,7 @@ func parse(_ tokens: [MTMathAtom],_ i:Int = 0,_ mm:Int = -1) -> MathStruct {
                     switch a {
                         case .scalar(let aa):
                         if tokens[j+1].nucleus != "(" {return .error}; j=j+1
-                        conseq.append(powparseuntilS(tokens,&j,m,")"){g in LnScalar(g)*pow(LnScalar(aa),-1)})
+                        conseq.append(powparseuntilS(tokens,&j,m,")"){g in .ln(g) / .ln(aa)})
                         default: return .error
                     }
                 } else {return .error}

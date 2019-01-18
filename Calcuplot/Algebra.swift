@@ -9,22 +9,7 @@
 import Foundation
 
 
-struct Vec3 {
-    var x:Double
-    var y:Double
-    var z:Double
-    init(_ a:Double,_ b:Double,_ c:Double) {x=a;y=b;z=c}
-}
-struct Vec2 {
-    var x:Double
-    var y:Double
-    init(_ a:Double,_ b:Double) {x=a;y=b}
-}
 
-func +(_ x:Vec2,_ y:Vec2) -> Vec2 {return Vec2(x.x+y.x,x.y+y.y)}
-func +(_ x:Vec3,_ y:Vec3) -> Vec3 {return Vec3(x.x+y.x,x.y+y.y,x.z+y.z)}
-func *(_ x:Vec2,_ y:Double) -> Vec2 {return Vec2(x.x+y,x.y+y)}
-func *(_ x:Vec3,_ y:Double) -> Vec3 {return Vec3(x.x+y,x.y+y,x.z*y)}
 
 infix operator %%
 func %%<T: BinaryInteger>(lhs: T, rhs: T) -> T {
@@ -77,46 +62,85 @@ func doubleRemap<T>(_ a:[T],_ b:(T,T)->(T?,T?,T?))->[T]{
 }
 
 
-func asrational(_ a:Scalar) -> (Int,Int)? {
-    if let a=asint(a) {return (a,1)}
-    if let a=a as? PowScalar, type(of:a.e) == Scalar.self, a.e.c == -1 {
-        if a.b.c<0 {return (-a.c,-a.b.c)}
-        return (a.c,a.b.c)
+func rationalcoefsplit(_ a:Scalar) -> (Scalar,Int,Int) {
+    if case .mult(let g) = a {
+        var ci = -1
+        var c = 1
+        var fi = -1
+        var f = 1
+        for n in 0..<g.count {
+            if case .constant(let cl) = g[n] {c=cl;ci=n}
+            if case .power(.constant(let cl),.constant(-1)) = g[n] {f=cl;fi=n}
+        }
+        var h = g;
+        if ci != -1 {h.remove(at:ci);}
+        if fi != -1 {h.remove(at:fi);}
+        return (.mult(h),c,f)
     }
-    return nil
+    if case .constant(let c) = a {return (.constant(1),c,1)}
+    return (a,1,1)
 }
-func exactdivide(_ a:Int,_ b:Int) -> Scalar {
-    if b==1 {return Constant(a)}
-    return pow(Constant(b),Constant(-1),a)
+
+
+
+func asrational(_ a:Scalar) -> (Int,Int)? {
+    switch a {
+        case .constant(let c): return (c,1)
+        case .power(.constant(let bi),.constant(-1)):
+            if bi<0 {return (-1,-bi)}
+            return (1,bi)
+        case .mult(let a):
+            if a.count==2 {
+                switch (a[0],a[1]) {
+                    case (.constant(let x),.power(.constant(let bi),.constant(-1))):
+                    if bi<0 {return (-x,-bi)}
+                    return (x,bi)
+                    case (.power(.constant(let bi),.constant(-1)),.constant(let x)):
+                    if bi<0 {return (-x,-bi)}
+                    return (x,bi)
+                    default:return nil
+                }
+            } else {return nil}
+        default:return nil
+    }
 }
 func aspower(_ a:Scalar) -> (Scalar,Scalar) {
-    if let a=a as? PowScalar {return (a.b,a.e)}
-    return (a,Constant(1))
+    if case .power(let b,let e) = a {return (b,e)}
+    return (a,.constant(1))
+}
+func coefsplit(_ a:Scalar) -> (Scalar,Int) {
+    if case .mult(let g) = a {
+        for n in 0..<g.count {
+            if case .constant(let c) = g[n] {
+                var h = g;h.remove(at:n);
+                return (.mult(h),c)
+            }
+        }
+    }
+    if case .constant(let c) = a {return (.constant(1),c)}
+    return (a,1)
 }
 func asint(_ a:Scalar) -> Int? {
-    if a is Constant {return a.c}
+    if case .constant(let c) = a {return c}
     return nil
 }
 func asmultchain(_ a:Scalar) -> [Scalar] {
-    if let a=a as? MultScalar {return a.a}
-    if a is Constant {return []}
-    return [a/a.c]
+    if case .mult(let b) = a {return b}
+    if case .constant(let c) = a, c == 1 {return []}
+    return [a]
 }
 func asaddchain(_ a:Scalar) -> [Scalar] {
-    if let a=a as? AddScalar {
-        if a.c != 1 {return a.a.map{g in return g*Constant(a.c)}}
-        else {return a.a}
-    }
-    if let a=asint(a),a==0 {return []}
+    if case .add(let b) = a {return b}
+    if case .constant(let c) = a, c == 0 {return []}
     return [a]
 }
 
 func mingcf(_ a:Scalar) -> Scalar {
     var g:[Scalar]=[]
     for a in asmultchain(a) {
-        if let (aen,_) = asrational(aspower(a).1), aen < -1 {g.append(a.deepcopy())}
+        if let (aen,_) = asrational(aspower(a).1), aen < -1 {g.append(a)}
     }
-    return MultScalar(g)
+    return .mult(g)
 }
 
 func gcf(_ a:Scalar,_ b:Scalar) -> Scalar {//rethink this... entire premise based on the fact that no two bases will be equivalent within a shallow-simplified multchain. That's not true... (e)
@@ -125,34 +149,31 @@ func gcf(_ a:Scalar,_ b:Scalar) -> Scalar {//rethink this... entire premise base
         let (ab,ae) = aspower(a)
         for b in asmultchain(b) {
             let (bb,be) = aspower(b)
-            guard coefEqual(ae,be) else {continue}
-            if ae.c<be.c {
-                if let ab = asint(ab), let bb = asint(bb) {
-                    cu.append(pow(Constant(gcf(ab,bb)),ae.deepcopy()))
-                } else if ab==bb {cu.append(a.deepcopy())}
-            } else {
-                if let ab = asint(ab), let bb = asint(bb) {
-                    cu.append(pow(Constant(gcf(ab,bb)),be.deepcopy()))
-                } else if ab==bb {cu.append(b.deepcopy())}
-            }
+            let (bewc,bec) = coefsplit(be)
+            let (aewc,aec) = coefsplit(ae)
+            guard bewc==aewc else {continue}
+            if let ab = asint(ab), let bb = asint(bb) {cu.append(.power(.constant(gcf(ab,bb)),aec<bec ? ae:be))}
+            else if ab==bb {cu.append(aec<bec ? a:b)}
         }
     }
     for c in [a,b] {
         for a in asmultchain(c) {
             let (ab,ae) = aspower(a)
-            if ae.c<0 {
-                if !any(cu,{k in ab==aspower(k).0}) {cu.append(a.deepcopy())}
+            let (_,aec) = coefsplit(ae)
+            if aec<0 {
+                if !any(cu,{k in ab==aspower(k).0}) {cu.append(a)}
             }
         }
     }
-    return MultScalar(cu.map{g in g
+//    throw//shallow simplify, right?
+    return .mult(cu.map{g in g
 //        let (b,e) = aspower(g)
 //        if let (en,ed) = asrational(e),let b=b as? AddScalar, en<0 {
 //            print("denominator should be rationalized here.")
 //            return PowScalar(b,exactdivide(en,ed),g.c)
 //        }
 //        return b
-    },gcf(a.c,b.c)).simplifyShallow()
+    })
 }
 func gcf(_ a:[Scalar]) -> Scalar {return a[1...].reduce(a[0],gcf)}
 
@@ -179,77 +200,103 @@ func gcf(_ a:[Scalar]) -> Scalar {return a[1...].reduce(a[0],gcf)}
 //    }
 //    return MultScalar(cu,a.c/gc.c).simplifyShallow()
 //}
-
-
-func coefEqual(_ a:Scalar,_ b:Scalar) -> Bool {
-    if a is Constant && b is Constant {return true}
-    else if let ac=a as? AddScalar, let bc=b as? AddScalar {return setEq(ac.a,bc.a,==)}
-    else if let ac=a as? MultScalar, let bc=b as? MultScalar {return setEq(ac.a,bc.a,==)}
-    else if let ac=a as? PowScalar, let bc=b as? PowScalar {return ac.b==bc.b && ac.e==bc.e}
-    else if let ac=a as? SpecialRef, let bc=b as? SpecialRef {return ac.va==bc.va}
-    else if let ac=a as? LnScalar, let bc=b as? LnScalar {return ac.b==bc.b}
-    else if let ac=a as? SinScalar, let bc=b as? SinScalar {return ac.b==bc.b}
-    else if let ac=a as? CosScalar, let bc=b as? CosScalar {return ac.b==bc.b}
-    else if let ac=a as? MinScalar, let bc=b as? MinScalar {return setEq(ac.a,bc.a,==)}
-    else if let ac=a as? MaxScalar, let bc=b as? MaxScalar {return setEq(ac.a,bc.a,==)}
-    else if let ac=a as? Abs, let bc=b as? Abs {return ac.a==bc.a}
-    else if let ac=a as? Integral, let bc=b as? Integral {return ac.d==bc.d && ac.l==bc.l && ac.u==bc.u && ac.va==bc.va}
-    else if let ac=a as? Derivative, let bc=b as? Derivative {return ac.d==bc.d && ac.t==bc.t && ac.va==bc.va}
-    else if let ac=a as? Magnitude2, let bc=b as? Magnitude2 {return ac.a==bc.a}
-    else if let ac=a as? Magnitude3, let bc=b as? Magnitude3 {return ac.a==bc.a}
-    else if let ac=a as? CrossProd2, let bc=b as? CrossProd2 {return ac.a==bc.a && ac.b==bc.b}
-    else if let ac=a as? DotProd2, let bc=b as? DotProd2 {return ac.a==bc.a && ac.b==bc.b}
-    else if let ac=a as? DotProd3, let bc=b as? DotProd3 {return ac.a==bc.a && ac.b==bc.b}
-    else {
-        if type(of:b) === type(of:a) {
-            print("this could be an unimplemented case.")
-        }
-        return false
+func == (a:Scalar,b:Scalar) -> Bool {
+    switch (a,b) {
+        case (.constant(let x),.constant(let y)): return x==y
+        case (.special(let x),.special(let y)): return x==y
+        case (.power(let ax,let ay),.power(let bx,let by)): return ax==bx && ay==by
+        case (.add(let x),.add(let y)): return setEq(x,y,==)
+        case (.mult(let x),.mult(let y)): return setEq(x,y,==)
+        case (.min(let x),.min(let y)): return setEq(x,y,==)
+        case (.max(let x),.max(let y)): return setEq(x,y,==)
+        case (.ln(let x),.ln(let y)): return x==y
+        case (.sin(let x),.sin(let y)): return x==y
+        case (.cos(let x),.cos(let y)): return x==y
+        case (.abs(let x),.abs(let y)): return x==y
+        case (.abs2(let x),.abs2(let y)): return x==y
+        case (.abs3(let x),.abs3(let y)): return x==y
+        case (.dot2(let ax,let ay),.dot2(let bx,let by)): return ax==bx && ay==by
+        case (.dot3(let ax,let ay),.dot3(let bx,let by)): return ax==bx && ay==by
+        case (.cross2(let ax,let ay),.cross2(let bx,let by)): return ax==bx && ay==by
+        case (.derivative(let ad,let aa,let ash),.derivative(let bd,let ba,let bsh)): return ad==bd && aa==ba && ash==bsh
+        case (.integral(let ad,let al,let au,let ash),.integral(let bd,let bl,let bu,let bsh)): return ad==bd && al==bl && au==bu && ash==bsh
+        default: return false;
     }
 }
-func == (a:Scalar,b:Scalar) -> Bool {if a.c != b.c {return false};return coefEqual(a,b)}
-func +(a:Scalar,b:Scalar) -> Scalar {return AddScalar([a.deepcopy(),b.deepcopy()]).simplifyShallow()}
-func -(a:Scalar,b:Scalar) -> Scalar {return AddScalar([a.deepcopy(),b * -1]).simplifyShallow()}
 
-func *(a:Scalar,b:Scalar) -> Scalar {return MultScalar([a.deepcopy(),b.deepcopy()]).simplifyShallow()}
-func *(a:Scalar,b:Int) -> Scalar {var temp = a.deepcopy();temp.c*=b;return temp}
-func /(a:Scalar,b:Scalar) -> Scalar {return a * pow(b,-1)}
-func /(a:Scalar,b:Int) -> Scalar {return a/Constant(b)}
-func pow(_ a:Scalar,_ b:Scalar) -> Scalar {return PowScalar(a.deepcopy(),b.deepcopy()).simplifyShallow()}
-func pow(_ a:Scalar,_ b:Scalar,_ c:Int) -> Scalar {return PowScalar(a.deepcopy(),b.deepcopy(),c).simplifyShallow()}
-func pow(_ a:Scalar,_ c:Int) -> Scalar {return PowScalar(a.deepcopy(),Constant(c)).simplifyShallow()}
-
-func +(_ a:Vector2,_ b:Vector2) -> Vector2{return AddVector2([a,b])}
-func +(_ a:Vector3,_ b:Vector3) -> Vector3 {return AddVector3([a,b])}
-func -(_ a:Vector2,_ b:Vector2) -> Vector2{return AddVector2([a,ScalarProd2(Constant(-1),b)])}
-func -(_ a:Vector3,_ b:Vector3) -> Vector3 {return AddVector3([a,ScalarProd3(Constant(-1),b)])}
-
-func == (_ a:Vector2,_ b:Vector2) -> Bool {
-    if      let ac=a as? Assemble2,   let bc=b as? Assemble2   {return ac.x==bc.x && ac.y==bc.y}
-    else if let ac=a as? ScalarProd2, let bc=b as? ScalarProd2 {return ac.a==bc.a && ac.b==bc.b}
-    else if let ac=a as? AddVector2,  let bc=b as? AddVector2  {return setEq(ac.a,bc.a,==)}
-    else if let ac=a as? Integral2,   let bc=b as? Integral2   {return ac.d==bc.d && ac.l==bc.l && ac.u==bc.u && ac.va==bc.va}
-    else if let ac=a as? Derivative2, let bc=b as? Derivative2 {return ac.d==bc.d && ac.t==bc.t && ac.va==bc.va}
-    else {
-        if type(of:b) === type(of:a) {
-            print("this could be an unimplemented case.")
-        }
-        return false
+func == (a:Vector2,b:Vector2) -> Bool {
+    switch (a,b) {
+        case (.assemble(let ax,let ay),.assemble(let bx,let by)): return ax==bx && ay==by
+        case (.add(let x),.add(let y)): return setEq(x,y,==)
+        case (.mult(let ax,let ay),.mult(let bx,let by)): return ax==bx && ay==by
+        case (.derivative(let ad,let aa,let ash),.derivative(let bd,let ba,let bsh)): return ad==bd && aa==ba && ash==bsh
+        case (.integral(let ad,let al,let au,let ash),.integral(let bd,let bl,let bu,let bsh)): return ad==bd && al==bl && au==bu && ash==bsh
+        default: return false
     }
 }
-func == (_ a:Vector3,_ b:Vector3) -> Bool {
-    if      let ac=a as? Assemble3,   let bc=b as? Assemble3   {return ac.x==bc.x && ac.y==bc.y && ac.z==bc.z}
-    else if let ac=a as? ScalarProd3, let bc=b as? ScalarProd3 {return ac.a==bc.a && ac.b==bc.b}
-    else if let ac=a as? AddVector3,  let bc=b as? AddVector3  {return setEq(ac.a,bc.a,==)}
-    else if let ac=a as? Integral3,   let bc=b as? Integral3   {return ac.d==bc.d && ac.l==bc.l && ac.u==bc.u && ac.va==bc.va}
-    else if let ac=a as? Derivative3, let bc=b as? Derivative3 {return ac.d==bc.d && ac.t==bc.t && ac.va==bc.va}
-    else if let ac=a as? CrossProd3,  let bc=b as? CrossProd3  {return ac.a==bc.a && ac.b==bc.b}
-    else {
-        if type(of:b) === type(of:a) {
-            print("this could be an unimplemented case.")
-        }
-        return false
+func == (a:Vector3,b:Vector3) -> Bool {
+    switch (a,b) {
+        case (.assemble(let ax,let ay,let az),.assemble(let bx,let by,let bz)): return ax==bx && ay==by && az==bz
+        case (.add(let x),.add(let y)): return setEq(x,y,==)
+        case (.mult(let ax,let ay),.mult(let bx,let by)): return ax==bx && ay==by
+        case (.cross3(let ax,let ay),.cross3(let bx,let by)): return ax==bx && ay==by
+        case (.derivative(let ad,let aa,let ash),.derivative(let bd,let ba,let bsh)): return ad==bd && aa==ba && ash==bsh
+        case (.integral(let ad,let al,let au,let ash),.integral(let bd,let bl,let bu,let bsh)): return ad==bd && al==bl && au==bu && ash==bsh
+        default: return false
     }
 }
+
+
+prefix func -(a:Scalar) -> Scalar {return a * -1}
+
+func +(a:Scalar,b:Scalar) -> Scalar {return .add([a,b])}
+func -(a:Scalar,b:Scalar) -> Scalar {return .add([a,-b])}
+func +(a:Scalar,b:Int) -> Scalar {return .add([a,.constant(b)])}
+func -(a:Scalar,b:Int) -> Scalar {return .add([a,.constant(-b)])}
+func +(a:Int,b:Scalar) -> Scalar {return .add([.constant(a),b])}
+func -(a:Int,b:Scalar) -> Scalar {return .add([.constant(a),-b])}
+
+func *(a:Scalar,b:Scalar) -> Scalar {return .mult([a,b])}
+func /(a:Scalar,b:Scalar) -> Scalar {return .mult([a,reciprocal(b)])}
+func *(a:Scalar,b:Int) -> Scalar {return .mult([a,.constant(b)])}
+func /(a:Scalar,b:Int) -> Scalar {return .mult([a,reciprocal(b)])}
+func *(a:Int,b:Scalar) -> Scalar {return .mult([.constant(a),b])}
+func /(a:Int,b:Scalar) -> Scalar {return .mult([.constant(a),reciprocal(b)])}
+
+func exactdivide(_ a:Int,_ b:Int) -> Scalar {
+    if b==1 {return .constant(a)}
+    if a==1 {return .power(.constant(b),.constant(-1))}
+    return .mult([.constant(a),.power(.constant(b),.constant(-1))])
+}
+func pow(_ b:Scalar,_ e:Scalar) -> Scalar {return .power(b,e)}
+func pow(_ b:Scalar,_ e:Int) -> Scalar {return .power(b,.constant(e))}
+func pow(_ b:Int,_ e:Scalar) -> Scalar {return .power(.constant(b),e)}
+func reciprocal(_ a: Scalar) -> Scalar {return pow(a,-1)}
+func reciprocal(_ a: Int) -> Scalar {return exactdivide(1,a)}
+func root(_ a: Scalar,_ e:Scalar) -> Scalar {return pow(a,reciprocal(e))}
+func root(_ a: Scalar,_ e:Int) -> Scalar {return pow(a,reciprocal(e))}
+func root(_ a: Int,_ e:Int) -> Scalar {return pow(.constant(a),reciprocal(e))}
+
+
+
+
+prefix func -(a:Vector2) -> Vector2 {return a * -1}
+prefix func -(a:Vector3) -> Vector3 {return a * -1}
+func +(_ a:Vector2,_ b:Vector2) -> Vector2{return .add([a,b])}
+func +(_ a:Vector3,_ b:Vector3) -> Vector3{return .add([a,b])}
+func -(_ a:Vector2,_ b:Vector2) -> Vector2{return .add([a,-b])}
+func -(_ a:Vector3,_ b:Vector3) -> Vector3{return .add([a,-b])}
+func *(_ a:Vector2,_ b:Scalar) -> Vector2{return .mult(b,a)}
+func *(_ a:Vector3,_ b:Scalar) -> Vector3{return .mult(b,a)}
+func *(_ b:Scalar,_ a:Vector2) -> Vector2{return .mult(b,a)}
+func *(_ b:Scalar,_ a:Vector3) -> Vector3{return .mult(b,a)}
+func *(_ a:Vector2,_ b:Int) -> Vector2{return .mult(.constant(b),a)}
+func *(_ a:Vector3,_ b:Int) -> Vector3{return .mult(.constant(b),a)}
+func *(_ b:Int,_ a:Vector2) -> Vector2{return .mult(.constant(b),a)}
+func *(_ b:Int,_ a:Vector3) -> Vector3{return .mult(.constant(b),a)}
+func /(_ a:Vector2,_ b:Scalar) -> Vector2{return a*reciprocal(b)}
+func /(_ a:Vector3,_ b:Scalar) -> Vector3{return a*reciprocal(b)}
+func /(_ a:Vector2,_ b:Int) -> Vector2{return a*reciprocal(b)}
+func /(_ a:Vector3,_ b:Int) -> Vector3{return a*reciprocal(b)}
 
 

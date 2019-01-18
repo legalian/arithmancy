@@ -23,6 +23,8 @@
 		5B43F35E2188BC650058C570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F35D2188BC650058C570 /* Assets.xcassets */; };
 		5B43F3602188C0220058C570 /* EquationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B43F35F2188C0220058C570 /* EquationList.swift */; };
 		5B4661D221C5303F007E7C87 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4661D121C5303F007E7C87 /* Parser.swift */; };
+		5B4661DA21E0F61D007E7C87 /* Graphing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4661D921E0F61D007E7C87 /* Graphing.swift */; };
+		5B4661DC21E8D1E7007E7C87 /* Algebra.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B4661DB21E8D1E7007E7C87 /* Algebra.swift */; };
 		5B595642218E7C5100398F8C /* MTKeyboardTab4.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3522188BBD80058C570 /* MTKeyboardTab4.xib */; };
 		5B595643218E7C5100398F8C /* MTKeyboardTab3.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3532188BBD80058C570 /* MTKeyboardTab3.xib */; };
 		5B595644218E7C5100398F8C /* MTKeyboardTab2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3542188BBD80058C570 /* MTKeyboardTab2.xib */; };
@@ -33,11 +35,9 @@
 		5B595649218E7C5100398F8C /* lmroman10-bolditalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F3592188BBD80058C570 /* lmroman10-bolditalic.otf */; };
 		5B59564A218E7C5100398F8C /* NewKeyboardAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5B43F35A2188BBD80058C570 /* NewKeyboardAssets.xcassets */; };
 		5BD84E8E217E0DD7006C9CB7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84E8D217E0DD7006C9CB7 /* AppDelegate.swift */; };
-		5BD84E90217E0DD7006C9CB7 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 5BD84E8F217E0DD7006C9CB7 /* art.scnassets */; };
 		5BD84E92217E0DD7006C9CB7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BD84E91217E0DD7006C9CB7 /* ViewController.swift */; };
 		5BD84E95217E0DD7006C9CB7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD84E93217E0DD7006C9CB7 /* Main.storyboard */; };
 		5BD84E9A217E0DDA006C9CB7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BD84E98217E0DDA006C9CB7 /* LaunchScreen.storyboard */; };
-		C13D2CC4FCE952E5E574B0AA /* libPods-Calcuplot.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BB1DE8DD9F970E981AE9D0B3 /* libPods-Calcuplot.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,15 +68,15 @@
 		5B43F35D2188BC650058C570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5B43F35F2188C0220058C570 /* EquationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquationList.swift; sourceTree = "<group>"; };
 		5B4661D121C5303F007E7C87 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		5B4661D921E0F61D007E7C87 /* Graphing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graphing.swift; sourceTree = "<group>"; };
+		5B4661DB21E8D1E7007E7C87 /* Algebra.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algebra.swift; sourceTree = "<group>"; };
 		5BD84E8A217E0DD7006C9CB7 /* Calcuplot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calcuplot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BD84E8D217E0DD7006C9CB7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5BD84E8F217E0DD7006C9CB7 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
 		5BD84E91217E0DD7006C9CB7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		5BD84E94217E0DD7006C9CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5BD84E99217E0DDA006C9CB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5BD84E9B217E0DDA006C9CB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		63EAFCC445DBA91CFB79B7D9 /* Pods-Calcuplot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calcuplot.debug.xcconfig"; path = "Calcuplot/Pods/Target Support Files/Pods-Calcuplot/Pods-Calcuplot.debug.xcconfig"; sourceTree = "<group>"; };
-		BB1DE8DD9F970E981AE9D0B3 /* libPods-Calcuplot.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Calcuplot.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4E996E8C26B8EEAC5BF2A50 /* Pods-Calcuplot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Calcuplot.release.xcconfig"; path = "Calcuplot/Pods/Target Support Files/Pods-Calcuplot/Pods-Calcuplot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,7 +85,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C13D2CC4FCE952E5E574B0AA /* libPods-Calcuplot.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,10 +174,11 @@
 				5B43F32F2188BB570058C570 /* mathEditor */,
 				5B43F3512188BBD80058C570 /* MathKeyboardResources */,
 				5B43F35D2188BC650058C570 /* Assets.xcassets */,
-				5BD84E8F217E0DD7006C9CB7 /* art.scnassets */,
 				5BD84E8D217E0DD7006C9CB7 /* AppDelegate.swift */,
 				5BD84E91217E0DD7006C9CB7 /* ViewController.swift */,
+				5B4661D921E0F61D007E7C87 /* Graphing.swift */,
 				5B43F35F2188C0220058C570 /* EquationList.swift */,
+				5B4661DB21E8D1E7007E7C87 /* Algebra.swift */,
 				5B40120F21AECEBD004C7B7A /* Technical.swift */,
 				5B4661D121C5303F007E7C87 /* Parser.swift */,
 				5BD84E93217E0DD7006C9CB7 /* Main.storyboard */,
@@ -193,7 +193,6 @@
 		A11C0C9958227F59B14ECDED /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BB1DE8DD9F970E981AE9D0B3 /* libPods-Calcuplot.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -218,7 +217,7 @@
 				5BD84E86217E0DD7006C9CB7 /* Sources */,
 				5BD84E87217E0DD7006C9CB7 /* Frameworks */,
 				5BD84E88217E0DD7006C9CB7 /* Resources */,
-				1D2E576B702EF3830A547FC3 /* [CP] Copy Pods Resources */,
+				AD9F504DDAE59DD9D42B5A8A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,7 +275,6 @@
 				5B595648218E7C5100398F8C /* WhiteBGKeyboardTab.xcassets in Resources */,
 				5B595649218E7C5100398F8C /* lmroman10-bolditalic.otf in Resources */,
 				5B59564A218E7C5100398F8C /* NewKeyboardAssets.xcassets in Resources */,
-				5BD84E90217E0DD7006C9CB7 /* art.scnassets in Resources */,
 				5BD84E9A217E0DDA006C9CB7 /* LaunchScreen.storyboard in Resources */,
 				5B43F35E2188BC650058C570 /* Assets.xcassets in Resources */,
 				5BD84E95217E0DD7006C9CB7 /* Main.storyboard in Resources */,
@@ -286,28 +284,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1D2E576B702EF3830A547FC3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Calcuplot/Pods/Target Support Files/Pods-Calcuplot/Pods-Calcuplot-resources.sh",
-				"${PODS_CONFIGURATION_BUILD_DIR}/iosMath/mathFonts.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/mathFonts.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Calcuplot/Pods/Target Support Files/Pods-Calcuplot/Pods-Calcuplot-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		4CB785FA3E7E9C2EB4743127 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -330,6 +306,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		AD9F504DDAE59DD9D42B5A8A /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Calcuplot/Pods/Target Support Files/Pods-Calcuplot/Pods-Calcuplot-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/iosMath/iosMath.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/iosMath.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Calcuplot/Pods/Target Support Files/Pods-Calcuplot/Pods-Calcuplot-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -337,7 +335,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B4661DC21E8D1E7007E7C87 /* Algebra.swift in Sources */,
 				5B43F3482188BB7C0058C570 /* MTDisplay+Editing.h in Sources */,
+				5B4661DA21E0F61D007E7C87 /* Graphing.swift in Sources */,
 				5B43F3492188BB7C0058C570 /* MTCaretView.h in Sources */,
 				5B43F34A2188BB7C0058C570 /* MTMathList+Editing.h in Sources */,
 				5B43F34B2188BB7C0058C570 /* MTEditableMathLabel.h in Sources */,
@@ -511,7 +511,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"iosMath\"",
 					"-framework",
 					"\"CoreGraphics\"",
 					"-framework",
@@ -546,7 +545,6 @@
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
-					"-l\"iosMath\"",
 					"-framework",
 					"\"CoreGraphics\"",
 					"-framework",
